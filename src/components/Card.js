@@ -5,6 +5,7 @@ import ageIcon from '../assets/growing-up-woman.svg';
 import locationIcon from '../assets/map.svg';
 import phoneIcon from '../assets/phone.svg';
 import passwordIcon from '../assets/padlock.svg';
+import Contacts from './Contacts';
 
 export default function Card() {
   const [search, setSearch] = useState();
@@ -16,9 +17,7 @@ export default function Card() {
   });
   const [hover, setHover] = useState('name');
 
-  // useEffect(() => {
-  //   console.log('hello');
-  // }, []);
+  const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
     fetch('https://randomuser.me/api/')
@@ -57,12 +56,6 @@ export default function Card() {
 
   return (
     <div className="card">
-      {/* {data !== undefined ? (
-        <h3>
-          name: {data.name}, age:{data.age}, email:{data.email}, location:
-          {data.location}, phone:{data.phone}
-        </h3>
-      ) : null} */}
       <div className="pp">
         <img src={currentData.picture} alt="Loading" />
       </div>
@@ -99,8 +92,20 @@ export default function Card() {
       </div>
       <div className="actions">
         <button onClick={() => setSearch(!search)}>new user</button>
-        <button>add user</button>
+        <button
+          onClick={() => {
+            let isRepeated = false;
+            contacts.forEach((item) => {
+              if (item.name === data.name) isRepeated = true;
+            });
+            console.log('Repeated:', isRepeated);
+            if (!isRepeated) setContacts([data, ...contacts]);
+          }}
+        >
+          add user
+        </button>
       </div>
+      {contacts.length !== 0 ? <Contacts info={contacts} /> : null}
     </div>
   );
 }

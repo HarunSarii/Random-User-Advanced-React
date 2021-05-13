@@ -124,3 +124,17 @@ p {
   background-color: #fec861;
   transition: all 0.5s ease;
 }
+
+/*contacts*/
+.contacts {
+  width: 100%;
+}
+table {
+  width: 100%;
+  font-size: 12px;
+}
+.tableHeader {
+  height: 30px;
+  background-color: #fec861;
+  color: #9d4d8c;
+}
