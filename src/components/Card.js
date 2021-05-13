@@ -68,19 +68,32 @@ export default function Card() {
         <button className="option-icon" onMouseEnter={() => setHover('name')}>
           <img src={nameIcon} alt="" />
         </button>
-        <button className="option-icon" onMouseEnter={() => setHover('email')}>
+        <button
+          className="option-icon"
+          onMouseEnter={() => setHover('email')}
+          onMouseLeave={() => setHover('name')}
+        >
           <img src={emailIcon} alt="" />
         </button>
-        <button className="option-icon" onMouseEnter={() => setHover('age')}>
+        <button
+          className="option-icon"
+          onMouseEnter={() => setHover('age')}
+          onMouseLeave={() => setHover('name')}
+        >
           <img src={ageIcon} alt="" />
         </button>
         <button
           className="option-icon"
           onMouseEnter={() => setHover('location')}
+          onMouseLeave={() => setHover('name')}
         >
           <img src={locationIcon} alt="" />
         </button>
-        <button className="option-icon" onMouseEnter={() => setHover('phone')}>
+        <button
+          className="option-icon"
+          onMouseEnter={() => setHover('phone')}
+          onMouseLeave={() => setHover('name')}
+        >
           <img src={phoneIcon} alt="" />
         </button>
         <button
@@ -100,6 +113,7 @@ export default function Card() {
             });
             console.log('Repeated:', isRepeated);
             if (!isRepeated) setContacts([data, ...contacts]);
+            else alert('You cannot add existing contacts');
           }}
         >
           add user
