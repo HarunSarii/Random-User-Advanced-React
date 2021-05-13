@@ -138,3 +138,31 @@ table {
   background-color: #fec861;
   color: #9d4d8c;
 }
+
+/*footer*/
+.footer {
+  font-size: 22px;
+  margin-top: 40px;
+  width: 150%;
+  background-color: white;
+  border: 2px solid #9d4d8c;
+  text-align: center;
+  color: #9d4d8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.footer img {
+  width: 35px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.footer .code {
+  font-style: italic;
+  color: gray;
+  font-weight: bold;
+  font-size: 25px;
+}
