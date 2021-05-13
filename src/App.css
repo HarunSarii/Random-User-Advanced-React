@@ -1,15 +1,44 @@
-.App {
-  margin: auto;
-  margin-top: 100px;
-  border: 3px solid green;
-  width: 50%;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.card {
-  background-color: #fefefe;
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+}
+
+.App {
+  margin: auto;
+  margin-top: 50px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.cw-header {
+  width: 100px;
+  margin: 30px;
+}
+
+.card {
+  width: 100%;
+  padding: 30px;
+  box-shadow: 3px 4px 20px -1px #6b6b6b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(
+    #f1f4f7 0,
+    #f1f4f7 98px,
+    #dadada 101px,
+    #fefefe 101px,
+    #fefefe 100%
+  );
 }
 
 .pp {
@@ -17,12 +46,17 @@
   height: 100px;
   overflow: hidden;
   border-radius: 50%;
-  border: 4px solid gray;
+  border: 4px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 4px 20px -1px #6b6b6b;
+  margin-bottom: 30px;
 }
 
 .pp img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 /*Info*/
@@ -30,51 +64,63 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
+  color: #252424;
 }
 
-/* Options */
+/*Options Icons*/
 .options {
-  width: 90%;
-  margin: 30px;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  margin-bottom: 30px;
 }
-
-.icon {
-  width: 45px;
-  height: 45px;
+.option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid gray;
+  padding: 0;
+  margin: 0;
+  box-shadow: 3px 4px 20px -1px #6b6b6b;
+  border: 1px solid rgb(190, 185, 185);
+  cursor: pointer;
 }
 
-.icon img {
-  max-width: 100%;
-  max-height: 100%;
+.option-icon img {
+  display: block;
+  max-height: 70%;
+  max-width: 70%;
 }
 
 /* Actions */
 
 .actions {
-  width: 70%;
+  margin: 10px;
+  width: 80%;
   display: flex;
   justify-content: space-between;
+  /* border: 2px solid black; */
 }
 
-/*deneme*/
-.option-icon {
-  display: inline-block;
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  vertical-align: top;
+.actions button {
+  background-color: #9d4d8c;
+  border: none;
+  height: 25px;
+  width: 100px;
+  border-radius: 5%;
+  color: white;
+  text-transform: uppercase;
+  font-size: 11px;
+  transition: all 0.5s ease;
+  cursor: pointer;
 }
 
-.option-icon img {
-  display: block;
-  max-height: 100%;
-  max-width: 100%;
+.actions button:hover {
+  color: black;
+  background-color: #fec861;
+  transition: all 0.5s ease;
 }

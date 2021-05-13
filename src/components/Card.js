@@ -10,19 +10,23 @@ export default function Card() {
   const [search, setSearch] = useState();
   const [data, setData] = useState();
   const [currentData, setCurrentData] = useState({
+    picture: nameIcon,
     title: 'name',
     info: 'Betul Kaplan',
   });
   const [hover, setHover] = useState('name');
 
-  useEffect(() => {}, []);
+  // useEffect(() => {
+  //   console.log('hello');
+  // }, []);
 
   useEffect(() => {
     fetch('https://randomuser.me/api/')
       .then((res) => res.json())
       .then((res) => {
         setData({
-          name: res.results[0].name.first,
+          picture: res.results[0].picture.medium,
+          name: res.results[0].name.first + ' ' + res.results[0].name.last,
           age: res.results[0].dob.age,
           email: res.results[0].email,
           location: res.results[0].location.city,
@@ -35,6 +39,7 @@ export default function Card() {
   useEffect(() => {
     if (data !== undefined) {
       setCurrentData({
+        picture: data.picture,
         title: 'name',
         info: data.name,
       });
@@ -43,6 +48,7 @@ export default function Card() {
   useEffect(() => {
     if (data !== undefined) {
       setCurrentData({
+        picture: data.picture,
         title: hover,
         info: data[hover],
       });
@@ -51,15 +57,18 @@ export default function Card() {
 
   return (
     <div className="card">
-      {data !== undefined ? (
+      {/* {data !== undefined ? (
         <h3>
           name: {data.name}, age:{data.age}, email:{data.email}, location:
           {data.location}, phone:{data.phone}
         </h3>
-      ) : null}
+      ) : null} */}
+      <div className="pp">
+        <img src={currentData.picture} alt="Loading" />
+      </div>
 
-      <div className="currentData">
-        <h1>My {currentData.title} is</h1>
+      <div className="info">
+        <p>My {currentData.title} is</p>
         <h2>{currentData.info}</h2>
       </div>
       <div className="options">
