@@ -10,11 +10,7 @@ import Contacts from './Contacts';
 export default function Card() {
   const [search, setSearch] = useState();
   const [data, setData] = useState();
-  const [currentData, setCurrentData] = useState({
-    picture: nameIcon,
-    title: 'name',
-    info: 'Betul Kaplan',
-  });
+  const [currentData, setCurrentData] = useState();
   const [hover, setHover] = useState('name');
 
   const [contacts, setContacts] = useState([]);
@@ -57,12 +53,12 @@ export default function Card() {
   return (
     <div className="card">
       <div className="pp">
-        <img src={currentData.picture} alt="Loading" />
+        <img src={currentData?.picture} alt="Loading" />
       </div>
 
       <div className="info">
-        <p>My {currentData.title} is</p>
-        <h2>{currentData.info}</h2>
+        <p>My {currentData?.title} is</p>
+        <h2>{currentData?.info}</h2>
       </div>
       <div className="options">
         <button className="option-icon" onMouseEnter={() => setHover('name')}>
