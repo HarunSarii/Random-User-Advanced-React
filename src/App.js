@@ -1,7 +1,7 @@
-import './App.css';
-import Card from './components/Card';
-import CW from './assets/cw.svg';
-import footerLogo from './assets/design.svg';
+import "./App.css";
+import Card from "./components/Card";
+import CW from "./assets/cw.svg";
+import footerLogo from "./assets/design.svg";
 
 function App() {
   return (
@@ -9,8 +9,8 @@ function App() {
       <img className="cw-header" src={CW} alt="" />
       <Card></Card>
       <div className="footer">
-        <span className="code">{'betty'}</span> <img src={footerLogo} alt="" />{' '}
-        <span>design</span>
+        <span className="code">{"HarunSari"}</span>{" "}
+        <img src={footerLogo} alt="" /> <span>design</span>
       </div>
     </div>
   );

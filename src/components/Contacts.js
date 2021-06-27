@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
 export default function Contacts(props) {
   return (
     <div className="contacts">
       <table>
         <colgroup>
-          <col span="1" style={{ width: '25%' }}></col>
-          <col span="1" style={{ width: '25%' }}></col>
-          <col span="1" style={{ width: '25%' }}></col>
-          <col span="1" style={{ width: '25%' }}></col>
+          <col span="1" style={{ width: "25%" }}></col>
+          <col span="1" style={{ width: "25%" }}></col>
+          <col span="1" style={{ width: "25%" }}></col>
+          <col span="1" style={{ width: "25%" }}></col>
         </colgroup>
         <tbody>
           <tr className="tableHeader">
